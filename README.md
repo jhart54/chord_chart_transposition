@@ -1,5 +1,10 @@
 # Welcome
-Welcome! This GitHub contains instructions for the transposition and quick formatting of chord charts for many purposes. The files included here are a Python script responsible for transposition, formatting ,and outputting of a PDF chord chart based on a desired key for the song and a text file input, a sample text file input, a pdf file with the logo of the church that sponsored this project (shoutout to the [Oaks Church](https://fonts.google.com/specimen/Inconsolata?subset=vietnamese) in Cincinnati!), and two font files used in printing. The font used was Inconsolata Semi-Condensed found [here](https://fonts.google.com/specimen/Inconsolata?subset=vietnamese). Spacing may be slightly off if different fonts are used.
+Welcome! This GitHub contains instructions for the transposition and quick formatting of chord charts for many purposes. The files included here are:
+- a Python script responsible for transposition, formatting ,and outputting of a PDF chord chart based on a desired key for the song and a text file input
+- a sample text file input
+- a pdf file with the logo of the church that sponsored this project (shoutout to the [Oaks Church](https://fonts.google.com/specimen/Inconsolata?subset=vietnamese) in Cincinnati!)
+- two font files used in printing
+  - the font used was Inconsolata Semi-Condensed found [here](https://fonts.google.com/specimen/Inconsolata?subset=vietnamese). Spacing may be slightly off if different fonts are used.
 
 # Code structure
 The code is split into functions responsible for reading in and processing the text file of chords and lyrics, identifying and transposing chords, and printing a formatted PDF.
