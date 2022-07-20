@@ -24,5 +24,5 @@ Running the code is as simple as changing the current directory to a directory w
 - pdf_chord_charts: folder for complete PDF chord charts to be saved
 - processing_files/fonts: folder/sub-folder to store fonts used in printing
 
-Lastly, I want to credit Manohar Vanga with several of the musical processing functions I borrowed from the excellent tutorial found [here](https://www.mvanga.com/blog/basic-music-theory-in-200-lines-of-python)). 
+Lastly, I want to credit Manohar Vanga with several of the musical processing functions I borrowed from the excellent tutorial found [here](https://www.mvanga.com/blog/basic-music-theory-in-200-lines-of-python). 
 Feel free to reach out with any questions or improvements if you end up using any of this code!
