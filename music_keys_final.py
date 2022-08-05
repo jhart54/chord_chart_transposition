@@ -623,7 +623,7 @@ for i in range(len(paragraphs)):
 
     # check to make sure there's going to be enough space on the page to print the rectangle
     # if so, print that baby as is; if not, move the current x and y position to top left of 2nd column
-    if rect_height > height - (current_y):
+    if rect_height > bottom_margin - current_y:
         current_x = center_right_margin
         current_y = top_margin + 25
         column = 2
