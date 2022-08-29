@@ -14,7 +14,7 @@ Welcome! This GitHub contains instructions for the transposition and quick forma
 # Code structure
 The code is split into functions responsible for reading in and processing the text file of chords and lyrics, identifying and transposing chords, and printing a formatted PDF.
 
-# Text input file requirements:
+# Text input file requirements
 - File must have the .txt extension
 - Spaces (not tabs) must be used to separate chord names above the lyrics
 - Lines with chords need to have more spaces than text characters (e.g. “G        “ as a complete line as opposed to just “G” for the line) as chords lines and lyrics lines are separated by clustering based on text to space ratio
@@ -23,7 +23,7 @@ The code is split into functions responsible for reading in and processing the t
 - Spacing of lines in the text file does not matter
 - The current key of the song is specified in the naming conventions of the file (e.g. “One of Us chords - B.txt”, where the key is B major)
 
-# Running the code and folder structure:
+# Running the code and folder structure
 Running the code is as simple as changing the current directory to a directory where several sub-folders are stored. The required naming conventions for the sub-folders are:
 - txt_input_files: raw text files created with the above conventions to be processed with the code
 - pdf_chord_charts: folder for complete PDF chord charts to be saved
