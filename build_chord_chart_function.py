@@ -430,6 +430,24 @@ def build_chord_chart(song_import_path, desired_key):
                     # if there is a space to add, then add it as soon as you reach another space
                     if (spaces_to_add > 0) or (spaces_to_remove > 0):
 
+
+                        # if we have to add and remove spaces, get the net of those actions
+                        if spaces_to_add == spaces_to_remove: # just keep going
+                            final_string += string[i]
+                            i += 1
+                            spaces_to_add = 0
+                            spaces_to_remove = 0
+
+                        elif spaces_to_add > spaces_to_remove:
+                            spaces_to_add = spaces_to_add - spaces_to_remove
+                            spaces_to_remove = 0
+
+                        elif spaces_to_add < spaces_to_remove:
+                            spaces_to_remove = spaces_to_remove - spaces_to_add
+                            spaces_to_add = 0
+
+
+                        # now resolve any remaining spaces that need to be added or removed
                         if spaces_to_add > 0:
                             final_string += ' ' * (spaces_to_add + 1)
                             spaces_to_add = 0
@@ -438,13 +456,13 @@ def build_chord_chart(song_import_path, desired_key):
                             # if there is a space to take away, if the next n characters are spaces, take them away
                             # where n is the number of spaces to remove
                             if string[i:i + spaces_to_remove + 1] == " " * (spaces_to_remove + 1):
-                                final_string += string[i + spaces_to_remove : i + spaces_to_remove + 1]
+                                final_string += "" #string[i + spaces_to_remove : i + spaces_to_remove + 1]
+                                i += spaces_to_remove
                                 spaces_to_remove = 0
-                                i += spaces_to_remove + 2
 
                             else: # if you can't remove the space, then just move on (unless it's the end of the string)
                                 if i >= len(string):
-                                    break
+                                    print('breaking')
                                 else:
                                     final_string += string[i]
                                     i += 1
@@ -455,6 +473,7 @@ def build_chord_chart(song_import_path, desired_key):
                 #print(final_string + ":")
 
             return(final_string)
+
 
         # now we do the actual string replacing within the text based on the chords_dict
 
@@ -471,6 +490,7 @@ def build_chord_chart(song_import_path, desired_key):
 
         # create a column to store the key of the song
         song_df2['key'] = desired_key
+
 
 
 
@@ -536,9 +556,9 @@ def build_chord_chart(song_import_path, desired_key):
     # change working directory
     os.chdir(master_path + '/txt_input_files')
 
-#     song_import_path = input('Enter path to current song.txt file (from ../txt_input_files/ wd):  ')
-#     #current_key = input('Enter the current key for the song:  ')
-#     desired_key = input('Enter the desired key for the song:  ')
+    #     song_import_path = input('Enter path to current song.txt file (from ../txt_input_files/ wd):  ')
+    #     #current_key = input('Enter the current key for the song:  ')
+    #     desired_key = input('Enter the desired key for the song:  ')
 
     # call the function to process those inputs
     song = read_song(song_title = song_import_path, desired_key = desired_key)
